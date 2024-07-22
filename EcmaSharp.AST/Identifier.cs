@@ -1,12 +1,9 @@
-﻿using System;
-using EcmaSharp.AST.Core;
+﻿using EcmaSharp.AST.Core;
 
 namespace EcmaSharp.AST;
 
-public interface IIdentifier : IExpression {
-    ReadOnlySpan<char> Value { get; }
-}
-
-public class Identifier(string value) : IIdentifier {
-    public ReadOnlySpan<char> Value => value.AsSpan();
-}
+/// <summary>
+/// https://developer.mozilla.org/en-US/docs/Glossary/Identifier
+/// </summary>
+/// <param name="Name">Name of identifier</param>
+public record Identifier(string Name) : IExpression;
