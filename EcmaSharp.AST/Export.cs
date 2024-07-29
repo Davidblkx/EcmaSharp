@@ -10,7 +10,7 @@ public interface IExportDeclaration : IDeclaration;
 
 /// <summary>
 /// export * from [Source]
-/// or 
+/// or
 /// export * as [Local] from [Source]
 /// </summary>
 /// <param name="Exported">source to export from</param>
