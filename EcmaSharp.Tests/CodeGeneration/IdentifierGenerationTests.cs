@@ -1,11 +1,10 @@
-﻿namespace EcmaSharp.Tests.CodeGeneration;
-public class IdentifierGenerationTests {
+namespace EcmaSharp.Tests.CodeGeneration;
+public class IdentifierGenerationTests : BaseCodeGenerationTests {
     [Fact]
-    public void ShouldGenerateIdentifier() {
-        var ident = ESTree.Ident("foo");
-        var generator = new EcmaSharpGenerator();
-        var writer = new StringWriter();
-        generator.Generate(writer, ident);
-        Assert.Equal("foo", writer.ToString());
+    public Task ShouldGenerateIdentifier() {
+        var node = new Identifier("foo");
+        var expected = "foo";
+
+        return AssertExpected(expected, node);
     }
 }

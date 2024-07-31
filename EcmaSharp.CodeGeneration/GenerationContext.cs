@@ -1,4 +1,4 @@
-﻿using EcmaSharp.AST.Core;
+using EcmaSharp.AST.Core;
 using System;
 
 namespace EcmaSharp.CodeGeneration;
@@ -20,9 +20,14 @@ public record GenerationContext(
     }
 
     public Task WriteNewLine() => Writer.WriteAsync(WritterConstants.NewLine);
+
+    public Task WriteSpace() => Writer.WriteAsync(WritterConstants.Space);
+
+    public Task WriteEndStatement() => Writer.WriteAsync(WritterConstants.EndStatement);
 }
 
 internal static class WritterConstants {
-    public const string Indentation = "   ";
     public const string NewLine = "\n";
+    public const string Space = " ";
+    public const string EndStatement = ";";
 }
